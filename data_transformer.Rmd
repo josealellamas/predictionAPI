@@ -1,0 +1,15 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+dataset<-read.csv('train.csv')
+dataset
+```
+```{r}
+library(rjson)
+x <- toJSON(unname(split(dataset, 1:nrow(dataset))))
+cat(x)
+```
+
